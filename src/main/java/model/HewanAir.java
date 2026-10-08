@@ -8,7 +8,7 @@ package model;
  *
  * @author ASUS
  */
-public class HewanAir extends Hewan{
+public final class HewanAir extends Hewan implements Perenang{
     private double kedalamanRenangMeter;
     
     public HewanAir(int id, String nama, String jenis, int umur, String habitat, PerawatanHewan perawatan, double kedalamanRenangMeter) {
@@ -30,7 +30,7 @@ public class HewanAir extends Hewan{
     @Override
     public void tampilkanInfoLengkap() {
         super.tampilkanInfoLengkap();
-        System.out.println("Info Tambahan : Hewan air, mampu berenang hingga kedalaman " + kedalamanRenangMeter + " meter");
+        System.out.println("Info Tambahan : Hewan air");
     }
     
     @Override
@@ -42,4 +42,14 @@ public class HewanAir extends Hewan{
     public void setNilai(double nilai) {
         setKedalamanRenangMeter(nilai);
     }
+    
+    @Override
+        public void tampilkanKemampuan() {
+            System.out.println(berenang());
+        }
+        
+    @Override
+    public String berenang() {
+        return nama + " berenang hingga kedalaman " + kedalamanRenangMeter + " meter.";
+    }    
 }

@@ -8,19 +8,20 @@ package model;
  *
  * @author ASUS
  */
-public class Hewan {
+public abstract class Hewan {
     
     //Atribut
-    private int id;
-    private String nama;
-    private String jenis;
-    private int umur;
-    private String habitat;
-    private PerawatanHewan perawatan;
+    protected final int id;
+    protected String nama;
+    protected String jenis;
+    protected int umur;
+    protected String habitat;
+    protected PerawatanHewan perawatan;
     
     //Constructor
     public Hewan(int id, String nama, String jenis, int umur, String habitat, PerawatanHewan perawatan) {
-        setId(id);
+        if (id < 0) { throw new IllegalArgumentException("ID Hewan tidak boleh negatif!"); }
+        this.id = id;
         setNama(nama);
         setJenis(jenis);
         setUmur(umur);
@@ -31,13 +32,6 @@ public class Hewan {
     //Getter dan Setter
     public int getId() {
         return id;
-    }
-    
-    public void setId(int id) {
-        if (id < 0){
-            throw new IllegalArgumentException("ID Hewan tidak boleh negatif!");
-        }
-        this.id = id;
     }
     
     public String getNama() {
@@ -95,12 +89,11 @@ public class Hewan {
         this.perawatan = perawatan;
     }
     
-    public String getLabel() {
-        return null;
-    }
+    public abstract String getLabel();
     
-    public void setNilai(double nilai) {
-    }
+    public abstract void setNilai(double nilai);
+    
+    public abstract void tampilkanKemampuan();
     
     public void tampilkanInfoLengkap() {
         System.out.println("Id : " + id);

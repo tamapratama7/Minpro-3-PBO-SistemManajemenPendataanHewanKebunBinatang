@@ -8,7 +8,7 @@ package model;
  *
  * @author ASUS
  */
-public class HewanDarat extends Hewan{
+public final class HewanDarat extends Hewan implements Pelari{
     private double kecepatanLariKmJam;
     
     public HewanDarat(int id, String nama, String jenis, int umur, String habitat, PerawatanHewan perawatan, double kecepatanLariKmJam) {
@@ -30,7 +30,7 @@ public class HewanDarat extends Hewan{
     @Override
     public void tampilkanInfoLengkap() {
         super.tampilkanInfoLengkap();
-        System.out.println("Info Tambahan : Hewan darat, kecepatan lari sekitar " + kecepatanLariKmJam + " km/jam");
+        System.out.println("Info Tambahan : Hewan darat");
     }
 
     
@@ -42,5 +42,15 @@ public class HewanDarat extends Hewan{
     @Override
     public void setNilai(double nilai) {
         setKecepatanLariKmJam(nilai);
+    }
+    
+    @Override
+    public void tampilkanKemampuan(){
+        System.out.println(berlari());
+    }
+    
+    @Override
+    public String berlari(){
+        return nama + " berlari dengan kecepatan " + kecepatanLariKmJam + " km/jm.";
     }
 }

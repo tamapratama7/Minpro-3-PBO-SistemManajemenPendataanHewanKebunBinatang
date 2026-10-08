@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package service;
+package controller;
 
 /**
  *
@@ -18,6 +18,8 @@ import model.HewanDarat;
 public class PengelolaHewan {
 
     private ArrayList<Hewan> daftarHewan;
+    private static int nextId = 1;
+    private static int nextIdPerawatan = 101;
     
     //Constructor
     public PengelolaHewan() {
@@ -25,10 +27,18 @@ public class PengelolaHewan {
         dataDummy();
     }
     
+    public int idHewanAuto() {
+        return nextId++;
+    }
+    
+    public int idPerawatanAuto() {
+        return nextIdPerawatan++;
+    }
+    
     private void dataDummy(){
-        daftarHewan.add(new HewanDarat(1, "Leo", "Singa", 5, "Savana", new PerawatanHewan(101, "Vaksinasi", "01-01-2026"), 80.0));
-        daftarHewan.add(new HewanDarat(2, "Kiko", "Gajah", 8, "Hutan Tropis", new PerawatanHewan(102, "Pemeriksaan Rutin", "15-02-2026"), 40.0));
-        daftarHewan.add(new HewanAir(3, "Nemo", "Lumba-lumba", 4, "Kolam Laut Buatan", new PerawatanHewan(103, "Pemeriksaan Sirip", "20-03-2026"), 200.0));
+        daftarHewan.add(new HewanDarat(nextId++, "Leo", "Singa", 5, "Savana", new PerawatanHewan(nextIdPerawatan++, "Vaksinasi", "01-01-2026"), 80.0));
+        daftarHewan.add(new HewanDarat(nextId++, "Kiko", "Gajah", 8, "Hutan Tropis", new PerawatanHewan(nextIdPerawatan++, "Pemeriksaan Rutin", "15-02-2026"), 40.0));
+        daftarHewan.add(new HewanAir(nextId++, "Nemo", "Lumba-lumba", 4, "Kolam Laut Buatan", new PerawatanHewan(nextIdPerawatan++, "Pemeriksaan Sirip", "20-03-2026"), 200.0));
     }
     
     private Hewan cariHewan(int id){

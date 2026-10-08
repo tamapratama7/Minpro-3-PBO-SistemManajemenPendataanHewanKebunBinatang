@@ -11,13 +11,14 @@ package model;
 public class PerawatanHewan {
     
     //Atribut
-    private int idPerawatan;
+    private final int idPerawatan;
     private String jenisPerawatan;
     private String tanggal;
     
     //Constructor
     public PerawatanHewan(int idPerawatan, String jenisPerawatan, String tanggal) {
-        setIdPerawatan(idPerawatan);
+        if (idPerawatan < 0) { throw new IllegalArgumentException("ID Hewan tidak boleh negatif!"); }
+        this.idPerawatan = idPerawatan;
         setJenisPerawatan(jenisPerawatan);
         setTanggal(tanggal);
     }
@@ -25,13 +26,6 @@ public class PerawatanHewan {
     //Getter dan Setter
     public int getIdPerawatan() {
         return idPerawatan;
-    }
-    
-    public void setIdPerawatan(int idPerawatan) {
-        if (idPerawatan < 0){
-            throw new IllegalArgumentException("ID Perawatan tidak boleh negatif!");
-        }
-        this.idPerawatan = idPerawatan; 
     }
     
     public String getJenisPerawatan() {

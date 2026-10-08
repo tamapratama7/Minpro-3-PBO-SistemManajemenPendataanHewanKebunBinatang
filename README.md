@@ -217,3 +217,7 @@ Hewan Air
 
 Dengan rancangan ini, jika suatu saat ada hewan baru yang punya lebih dari satu kemampuan (misalnya hewan amfibi yang bisa berlari sekaligus berenang), class-nya cukup `implements Pelari, Perenang` tanpa mengubah class lain.
   
+<p align="center">   
+    <img width="638" height="26" alt="image" src="https://github.com/user-attachments/assets/b8911b1e-324e-4a6b-8fbd-0b445b82ea3c" />
+    <img width="637" height="22" alt="image" src="https://github.com/user-attachments/assets/71be1276-acff-405b-89bb-f18190928488" />
+</p>

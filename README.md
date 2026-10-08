@@ -187,7 +187,7 @@ Contoh lain `setNilai()` di `HewanDarat`, yang meneruskan nilai ke atribut khusu
   <img width="390" height="96" alt="image" src="https://github.com/user-attachments/assets/a428b036-c13f-4823-9c2c-023bdb7e20cd" />
 </p>
 
-## H. Penjelasan Letak Penerapan Nilai Tambah  
+## H. Penjelasan Letak Penerapan Nilai Tambah Interface
 
 Ada dua interface di package `model`:  
 
